@@ -1,0 +1,41 @@
+@import '~assets/scss/_loads';
+
+header{background-color: $color-header;}
+.content{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    @include display-flex;
+    @include align-items(flex-start);
+    @include justify-content(space-between);
+}
+.logo{
+    width: 80px;
+    height: 80px;
+    @include box-shadow(0 0 20px rgba(black, 0.5));
+    img{object-fit: contain; width: 100%; height: 100%;}
+}
+
+nav{
+    ul{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        @include display-flex;
+    }
+    li{margin: 0 8px; position: relative;}
+    li > ul{
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        li {
+            margin: 8px 0;
+        }
+    }
+    li:hover > ul{display: block;}
+}
+
+@media only screen and (max-width: 959px) {
+    nav li > ul{display: block;}
+}
+  

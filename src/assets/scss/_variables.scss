@@ -1,0 +1,20 @@
+/* FONTS */
+@include font-face("PtSans", "/assets/fonts/ptsans-italic", normal italic);
+@include font-face("PtSans", "/assets/fonts/ptsans-regular", normal);
+@include font-face("PtSans", "/assets/fonts/ptsans-bold", bold);
+
+$font-ptsans: 'PtSans', 'Helvetica Neue', 'sans-serif';
+
+
+/* EASING */
+$cubic: cubic-bezier(0.4,0.1,0.25,1);
+$cubic2: cubic-bezier(0.7,0,0.3,1);
+$cubic-elastic: cubic-bezier(0.65, -0.6, 0.24, 1.65);
+$cubic-in-out: cubic-bezier(.6,.99,.6,.99);
+
+
+/* COLORS */
+$color-background:          #f0f0f0;
+$color-button:              #D7DBDD;
+$color-header:              #670000;
+$color-border:              #CCCCCC;

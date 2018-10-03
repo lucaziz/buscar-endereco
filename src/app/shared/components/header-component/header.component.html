@@ -1,0 +1,17 @@
+<header>
+  <div class="content">
+    <div class="logo"><img src="assets/svgs/logo-sccon.svg" alt="SCCON" /></div>
+    <nav>
+      <ul>
+        <li><a class="button-link" routerLink="/home" routerLinkActive="button-link--active">Home</a></li>
+        <li>
+          <a class="button-link button-link--disable" [class.button-link--active]="childbtn.isActive">Endereços</a>
+          <ul>
+            <li><a class="button-link" routerLink="/enderecos" routerLinkActive="button-link--active" #childbtn="routerLinkActive">Buscar Endereços</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+

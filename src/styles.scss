@@ -1,1 +1,84 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~assets/scss/_loads';
+
+h1, h2, h3, h4, h5, h6{margin: 0; padding: 0; font-weight: normal;}
+a{text-decoration: none;}
+input, textarea, button, select{font-family: $font-ptsans;}
+*{outline: none; @include box-sizing(border-box);}
+html, body{height: 100%; min-height: 100%;}
+body{margin: 0; font-family: $font-ptsans; font-weight: normal; background-color: $color-background;}
+
+.content, main{
+    margin: 0 auto;
+    width: 1140px;
+}
+main{
+  position: relative;
+  @include calc(min-height, '100vh - 120px');
+}
+.button-link{
+  display: block;
+  font-size: 12px;
+  padding: 6px 18px;
+  color: $color-header;
+  white-space: nowrap;
+  text-transform: uppercase;
+  background-color: $color-button;
+  border: none;
+  cursor: pointer;
+  @include display-flex;
+  @include align-items(center);
+  @include justify-content(center);
+  @include border-radius(2px);
+  @include transition(color 150ms linear, background-color 200ms linear, box-shadow 100ms linear);
+  &:not(.button-link--disable):hover, &.button-link--active{
+      background-color: darken($color-button, 6%);
+  }
+  &:not(.button-link--disable):active{
+      @include box-shadow(0 0 10px rgba(white, 1));
+  }
+}
+
+/* loading */
+.loading-content{
+  width: 100%;
+  min-height: 150px;
+  @include display-flex;
+  @include align-items(center);
+  @include justify-content(center);
+}
+.loading {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  @include display-flex;
+  div {
+    transform-origin: 32px 32px;
+    animation: animaLoading 1.2s linear infinite;
+    &:after {
+      content: " ";
+      display: block;
+      position: absolute;
+      top: 3px;
+      left: 29px;
+      width: 5px;
+      height: 14px;
+      border-radius: 20%;
+      background-color: $color-header;
+    }
+    $delay: 0.1s;
+    $deg: 30deg;
+    @for $i from 1 through 12 {
+        &:nth-child(#{$i}){
+          @include transform(rotate($deg*$i - 30deg));
+          animation-delay: -1.1s+($delay*$i);
+        }
+    }
+  }
+}
+
+@media only screen and (max-width: 959px) {
+  .content, main{
+    padding: 0 20px;
+    width: 100%;
+  }
+}

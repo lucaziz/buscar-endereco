@@ -1,0 +1,22 @@
+@import '~assets/scss/_loads';
+
+form{
+    width: 100%;
+    padding: 30px 0;
+    @include display-flex;
+    @include justify-content(center);
+    @include align-items(center);
+}
+.button-link{
+    margin-left: 15px;
+    width: 100px;
+    font-size: 14px;
+    min-height: 36px;
+}
+
+@media only screen and (max-width: 959px) {
+    form{
+        @include justify-content(flex-end);
+    }
+}
+  

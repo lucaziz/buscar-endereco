@@ -1,0 +1,26 @@
+
+@import '~assets/scss/_mixins';
+@import '~assets/scss/_variables';
+@import '~@angular/material/theming';
+
+$cep-app-primary:  mat-palette($mat-blue-grey, 600);
+$cep-app-accent:   mat-palette($mat-blue-grey, 300);
+$cep-app-warn:     mat-palette($mat-red);
+$cep-app-theme:    mat-light-theme($cep-app-primary, $cep-app-accent, $cep-app-warn);
+
+$custom-typography: mat-typography-config(
+    $font-family: 'PtSans, Helvetica Neue, sans-serif'
+);
+
+@include mat-core($custom-typography);
+@include angular-material-typography($custom-typography);
+@include angular-material-theme($cep-app-theme);
+
+// button
+button.mat-raised-button{
+    min-height: 40px;
+    @include display-flex;
+    @include justify-content(center);
+    @include align-items(center);
+    @include border-radius(5px);
+}
